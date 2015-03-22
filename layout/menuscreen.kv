@@ -1,0 +1,20 @@
+#:kivy 1.0
+#:import RiseInTransition kivy.uix.screenmanager.RiseInTransition
+
+<MenuScreen>:
+
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 20
+
+        Button:
+            text: 'Add Server'
+            on_press: root.add_server()
+        Button:
+            text: 'Turn ON scan mode'
+            on_press:
+                root.manager.transition = RiseInTransition()
+                root.manager.current='scan'
+        Button:
+            text: 'Quit'
+            on_press: root.exit()

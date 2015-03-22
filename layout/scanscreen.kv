@@ -1,0 +1,21 @@
+#:kivy 1.0
+#:import FallOutTransition kivy.uix.screenmanager.FallOutTransition
+
+
+<ScanScreen>:
+
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 20
+
+        CameraPreview
+        Button:
+            text: 'Show Preview'
+            on_press:
+                root.start_cam()
+            
+        Button:
+            text: 'Return To Menu'
+            on_press:
+                root.manager.transition = FallOutTransition()
+                root.manager.current = 'menu'
